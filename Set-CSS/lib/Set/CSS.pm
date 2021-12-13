@@ -67,7 +67,9 @@ Returns a hash reference of HTML attributes.
 
 Returns a string of HTML attributes.
 
-=head2
+=head1 Media Recommendations
+
+L<Hallelujah - Cover by Lucy Thomas|https://www.youtube.com/watch?v=4hjgkvuKES8>
 
 =cut
 
