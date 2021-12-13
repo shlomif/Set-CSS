@@ -41,10 +41,10 @@ use Set::CSS ();
         {
             class => ""
         },
-        "html_attrs on full"
+        "html_attrs on on_empty"
     );
 
     # TEST
     eq_or_diff( $set->as_html( { on_empty => 1, } ),
-        ' class=""', "as_html on full" );
+        ' class=""', "as_html on on_empty" );
 }
