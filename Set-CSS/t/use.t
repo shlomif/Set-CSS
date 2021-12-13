@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 4;
+use Test::More tests => 6;
 
 use Set::CSS ();
 
@@ -34,4 +34,17 @@ use Set::CSS ();
 
     # TEST
     eq_or_diff( $set->as_html(), q##, "as_html on empty" );
+
+    # TEST
+    eq_or_diff(
+        $set->html_attrs( { on_empty => 1, } ),
+        {
+            class => ""
+        },
+        "html_attrs on full"
+    );
+
+    # TEST
+    eq_or_diff( $set->as_html( { on_empty => 1, } ),
+        ' class=""', "as_html on full" );
 }
