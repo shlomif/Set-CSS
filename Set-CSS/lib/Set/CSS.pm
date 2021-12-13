@@ -1,5 +1,6 @@
 package Set::CSS;
 
+use 5.014;
 use strict;
 use warnings;
 
@@ -47,7 +48,8 @@ Set::CSS - set of CSS classes
 
     my $set = Set::CSS->new( "class1", "blast", );
 
-    print $set->as_html();
+    # Prints ' class="blast class1"'
+    print $set->as_html(), "\n";
 
 =head1 DESCRIPTION
 
