@@ -43,7 +43,19 @@ Set::CSS - set of CSS classes
 
 =head1 SYNOPSIS
 
+    use Set::CSS ();
+
+    my $set = Set::CSS->new( "class1", "blast", );
+
+    print $set->as_html();
+
 =head1 DESCRIPTION
+
+Inheriting from L<Set::Object> this class provides methods for emitting
+HTML.
+
+If $args{on_empty} is not true B<and> the set is empty, then no output
+shall be emitted.
 
 =head1 METHODS
 
