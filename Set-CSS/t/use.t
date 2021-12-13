@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More tests => 2;
 
 use Set::CSS ();
 
@@ -19,4 +19,7 @@ use Set::CSS ();
         },
         "html_attrs on full"
     );
+
+    # TEST
+    eq_or_diff( $set->as_html(), ' class="blast class1"', "as_html on full" );
 }

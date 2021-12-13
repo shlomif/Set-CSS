@@ -16,6 +16,21 @@ sub html_attrs
     return +{};
 }
 
+use HTML::Widgets::NavMenu::EscapeHtml qw/ escape_html /;
+
+sub as_html
+{
+    my ( $self, $args ) = @_;
+
+    my $att = $self->html_attrs($args);
+    my $ret = "";
+    foreach my $k ( sort keys %$att )
+    {
+        $ret .= qq# $k="# . escape_html( $att->{$k} ) . qq#"#;
+    }
+    return $ret;
+}
+
 1;
 
 __END__
@@ -35,6 +50,10 @@ Set::CSS - set of CSS classes
 =head2 $self->html_attrs(\%args)
 
 Returns a hash reference of HTML attributes.
+
+=head2 $self->as_html(\%args)
+
+Returns a string of HTML attributes.
 
 =head2
 
