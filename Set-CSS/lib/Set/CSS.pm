@@ -59,7 +59,7 @@ Set::CSS - set of CSS classes
 Inheriting from L<Set::Object> this class provides methods for emitting
 HTML.
 
-If $args{on_empty} is not true B<and> the set is empty, then no output
+If C<< $args{on_empty} >> is not true B<and> the set is empty, then no output
 shall be emitted.
 
 =head1 METHODS
@@ -82,7 +82,7 @@ L<Set::Object> - Set::CSS inherits its methods
 
 L<HTML's 'class' attribute|https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class>
 
-L<jQuery class methods|https://api.jquery.com/category/manipulation/class-attribute/>
+L<jQuery’s class methods|https://api.jquery.com/category/manipulation/class-attribute/>
 
 =cut
 
