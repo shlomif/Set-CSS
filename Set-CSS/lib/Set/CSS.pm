@@ -6,6 +6,8 @@ use warnings;
 
 use parent 'Set::Object';
 
+use HTML::Widgets::NavMenu::EscapeHtml qw/ escape_html /;
+
 sub html_attrs
 {
     my ( $self, $args ) = @_;
@@ -16,8 +18,6 @@ sub html_attrs
     }
     return +{};
 }
-
-use HTML::Widgets::NavMenu::EscapeHtml qw/ escape_html /;
 
 sub as_html
 {
