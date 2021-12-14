@@ -11,6 +11,9 @@ use Set::CSS ();
     my $set = Set::CSS->new( "class1", );
     $set->insert("blast");
 
+    # Avoiding duplicates
+    $set->insert("class1");
+
     # TEST
     eq_or_diff(
         $set->html_attrs(),

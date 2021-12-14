@@ -48,6 +48,8 @@ Set::CSS - set of CSS classes
 
     my $set = Set::CSS->new( "class1", );
     $set->insert("blast");
+    # Avoiding duplicates
+    $set->insert("class1");
 
     # Prints ' class="blast class1"'
     print $set->as_html(), "\n";
