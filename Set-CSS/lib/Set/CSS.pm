@@ -46,7 +46,8 @@ Set::CSS - set of CSS classes
 
     use Set::CSS ();
 
-    my $set = Set::CSS->new( "class1", "blast", );
+    my $set = Set::CSS->new( "class1", );
+    $set->insert("blast");
 
     # Prints ' class="blast class1"'
     print $set->as_html(), "\n";
@@ -72,6 +73,14 @@ Returns a string of HTML attributes.
 =head1 Media Recommendations
 
 L<Hallelujah - Cover by Lucy Thomas|https://www.youtube.com/watch?v=4hjgkvuKES8>
+
+=head1 SEE ALSO
+
+L<Set::Object> - Set::CSS inherits its methods
+
+L<HTML's 'class' attribute|https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class>
+
+L<jQuery class methods|https://api.jquery.com/category/manipulation/class-attribute/>
 
 =cut
 
