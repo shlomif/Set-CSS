@@ -50,6 +50,15 @@ sub removeClass
     return;
 }
 
+sub toggleClass
+{
+    my ( $self, @c ) = @_;
+
+    $self->invert(@c);
+
+    return;
+}
+
 1;
 
 __END__
@@ -93,14 +102,21 @@ Returns a string of HTML attributes.
 =head2 $self->addClass(@classes)
 
 Wrapper for Set::Object 's insert() with an empty return value (for use
-in L<Template> / etc.
+in L<Template> / etc.)
 
 (Added in v0.2.0. )
 
 =head2 $self->removeClass(@classes)
 
 Wrapper for Set::Object 's remove() with an empty return value (for use
-in L<Template> / etc.
+in L<Template> / etc.)
+
+(Added in v0.2.0. )
+
+=head2 $self->toggleClass(@classes)
+
+Wrapper for Set::Object 's invert() with an empty return value (for use
+in L<Template> / etc.)
 
 (Added in v0.2.0. )
 

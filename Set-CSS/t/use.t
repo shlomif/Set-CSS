@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 10;
+use Test::More tests => 14;
 use Test::Differences qw( eq_or_diff );
 
 use Set::CSS ();
@@ -62,6 +62,23 @@ use Set::CSS ();
 
     # TEST
     eq_or_diff( [ $set->removeClass("foo") ], [], "removeClass returns empty" );
+
+    # TEST
+    eq_or_diff( $set->as_html( { on_empty => 0, } ), '', "foo is there" );
+}
+
+{
+    my $set = Set::CSS->new();
+
+    # TEST
+    eq_or_diff( [ $set->toggleClass("foo") ], [], "toggleClass returns empty" );
+
+    # TEST
+    eq_or_diff( $set->as_html( { on_empty => 0, } ),
+        ' class="foo"', "foo is there" );
+
+    # TEST
+    eq_or_diff( [ $set->toggleClass("foo") ], [], "toggleClass returns empty" );
 
     # TEST
     eq_or_diff( $set->as_html( { on_empty => 0, } ), '', "foo is there" );
