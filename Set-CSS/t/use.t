@@ -3,13 +3,13 @@
 use strict;
 use warnings;
 use Test::More tests => 6;
+use Test::Differences qw( eq_or_diff );
 
 use Set::CSS ();
 
 {
-    my $set = Set::CSS->new( "class1", "blast", );
-
-    use Test::Differences qw( eq_or_diff );
+    my $set = Set::CSS->new( "class1", );
+    $set->insert("blast");
 
     # TEST
     eq_or_diff(
@@ -26,8 +26,6 @@ use Set::CSS ();
 
 {
     my $set = Set::CSS->new();
-
-    use Test::Differences qw( eq_or_diff );
 
     # TEST
     eq_or_diff( $set->html_attrs(), +{}, "html_attrs on empty" );
