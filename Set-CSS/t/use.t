@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 6;
+use Test::More tests => 8;
 use Test::Differences qw( eq_or_diff );
 
 use Set::CSS ();
@@ -48,4 +48,15 @@ use Set::CSS ();
     # TEST
     eq_or_diff( $set->as_html( { on_empty => 1, } ),
         ' class=""', "as_html on on_empty" );
+}
+
+{
+    my $set = Set::CSS->new();
+
+    # TEST
+    eq_or_diff( [ $set->addClass("foo") ], [], "addClass returns empty" );
+
+    # TEST
+    eq_or_diff( $set->as_html( { on_empty => 0, } ),
+        ' class="foo"', "foo is there" );
 }

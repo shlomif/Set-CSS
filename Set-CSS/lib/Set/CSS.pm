@@ -32,6 +32,15 @@ sub as_html
     return $ret;
 }
 
+sub addClass
+{
+    my ( $self, @c ) = @_;
+
+    $self->insert(@c);
+
+    return;
+}
+
 1;
 
 __END__
@@ -71,6 +80,11 @@ Returns a hash reference of HTML attributes.
 =head2 $self->as_html(\%args)
 
 Returns a string of HTML attributes.
+
+=head2 $self->addClass(@classes)
+
+Wrapper for Set::Object 's insert() with an empty return value (for use
+in L<Template> / etc.
 
 =head1 Media Recommendations
 
