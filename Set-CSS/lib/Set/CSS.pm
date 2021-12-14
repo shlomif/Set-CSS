@@ -41,6 +41,15 @@ sub addClass
     return;
 }
 
+sub removeClass
+{
+    my ( $self, @c ) = @_;
+
+    $self->remove(@c);
+
+    return;
+}
+
 1;
 
 __END__
@@ -85,6 +94,15 @@ Returns a string of HTML attributes.
 
 Wrapper for Set::Object 's insert() with an empty return value (for use
 in L<Template> / etc.
+
+(Added in v0.2.0. )
+
+=head2 $self->removeClass(@classes)
+
+Wrapper for Set::Object 's remove() with an empty return value (for use
+in L<Template> / etc.
+
+(Added in v0.2.0. )
 
 =head1 Media Recommendations
 
